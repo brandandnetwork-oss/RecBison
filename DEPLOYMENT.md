@@ -6,52 +6,77 @@ This guide explains how to deploy your "Giant" website to Hostinger using Node.j
 1.  **Hostinger Plan**: You need a plan that supports Node.js (Ubuntu VPS is best, or Shared Hosting **IF** it supports Node.js apps).
 2.  **SSH Access**: You should have SSH access to your server.
 
-## Steps
+# Deployment Guide for Hostinger (Node.js)
 
-### 1. Upload Files
-Upload all the files in the `Giant-v1-0-Template` folder to your server (e.g., via FileZilla or FTP) to the `public_html` folder or a subfolder (e.g., `/home/u123456789/domains/yourdomain.com/public_html`).
+This application is built with **Node.js** and **Express**. It replaces the old PHP logic with a modern JavaScript server.
 
-### 2. Configure Environment Variables
-1.  Rename `.env.example` to `.env`.
-2.  Open `.env` and fill in your details:
-    *   **SMTP Credentials**: Use your Hostinger Email (Titan) or Gmail.
-    *   **MailChimp**: Add your API Key if you use the newsletter.
+## 1. Prerequisites
+- **Node.js** (v16 or higher)
+- **NPM**
 
-### 3. Install Dependencies
-Connect to your server via SSH and navigate to the folder where you uploaded the files:
-
+## 2. Local Testing
+To run the app locally:
 ```bash
-cd /path/to/your/folder
 npm install
-```
-
-### 4. Test the Server
-Run the server to see if it works:
-
-```bash
 npm start
 ```
+Go to `http://localhost:3000`.
 
-You should see: `Server is running on port 3000`.
+## 3. Deploying to Hostinger
 
-### 5. Keep the Server Running (Production)
-You don't want the server to stop when you close the SSH window. Use `pm2` for this.
-
-1.  Install PM2 globally (if not installed):
+### Option A: Hostinger VPS (Recommended for Control)
+1.  **Connect to VPS**:
+    ```bash
+    ssh root@your_vps_ip
+    ```
+2.  **Install Node.js & Git**:
+    ```bash
+    curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+    sudo apt-get install -y nodejs git
+    ```
+3.  **Clone Repository**:
+    ```bash
+    git clone https://github.com/brandandnetwork-oss/RecBison.git
+    cd RecBison
+    ```
+4.  **Install Dependencies**:
+    ```bash
+    npm install
+    ```
+5.  **Setup Environment Variables**:
+    Create a `.env` file:
+    ```bash
+    nano .env
+    ```
+    Paste your config (SMTP settings, etc.):
+    ```
+    PORT=3000
+    SMTP_HOST=smtp.gmail.com
+    SMTP_PORT=587
+    SMTP_USER=your_email@gmail.com
+    SMTP_PASS=your_app_password
+    EMAIL_TO=recipient@example.com
+    ```
+6.  **Run with PM2 (Process Manager)**:
     ```bash
     npm install -g pm2
-    ```
-2.  Start the app:
-    ```bash
-    pm2 start server.js --name "giant-website"
-    ```
-3.  Save the list so it auto-starts on reboot:
-    ```bash
+    pm2 start server.js --name "recbison"
     pm2 save
     pm2 startup
     ```
+7.  **Setup Nginx (Reverse Proxy)**:
+    Install Nginx and configure it to proxy requests from port 80 to port 3000.
 
-### 6. Point Your Domain (Reverse Proxy)
+### Option B: Hostinger Cloud / Shared with Node.js Support
+1.  **Upload Files**: Use File Manager or verified Git integration to upload your project files to `public_html` (or a subdirectory).
+2.  **Node.js Selector**: In Hostinger Setup, find "Node.js" section.
+    - Set Version to **18.x** or **16.x**.
+    - Set Application Mode to **Production**.
+    - Set Application Entry File to `server.js`.
+3.  **Install Dependencies**: Click "NPM Install" in the Hostinger dashboard.
+4.  **Environment Variables**: Hostinger Cloud might require defining variables in the dashboard or loading them differently. If `.env` is not read, check Hostinger documentation.
+
+**IMPORTANT**: Since we removed PHP files, your server MUST handle requests via `server.js` and NOT try to serve `.php` files directly. The Node.js server handles the `/contact.php` route internally for backward compatibility.
 If you are running on port 3000, you need to tell the web server (Nginx/Apache) to send traffic from `yourdomain.com` to `localhost:3000`.
 
 #### If using Hostinger Shared Node.js:
