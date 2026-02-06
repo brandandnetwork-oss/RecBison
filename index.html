@@ -33,8 +33,7 @@
         /* Mobile specific adjustments */
         @media (max-width: 767px) {
             #works {
-                padding-top: 450px !important;
-                /* Allow section to grow vertically */
+                padding-top: 500px !important;
                 height: auto !important;
             }
 
@@ -45,24 +44,32 @@
 
             #works-content .works-grid-inner {
                 width: 100% !important;
-                height: 520px !important;
-                /* Proper vertical poster height */
-                min-height: 520px !important;
-                margin-bottom: 60px !important;
-                /* Significant spacing to avoid "pisen" */
+                height: 480px !important;
+                /* Perfect vertical poster height 2:3 ratio */
+                min-height: 480px !important;
+                margin-bottom: 80px !important;
+                /* Maximum separation for "perfect distinction" */
                 position: relative !important;
                 top: auto !important;
                 left: auto !important;
                 float: none !important;
                 display: block !important;
+                /* Add a subtle aesthetic frame */
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             }
 
-            #works-content .works-grid-inner .relative-container,
+            #works-content .works-grid-inner .relative-container {
+                height: 100% !important;
+                min-height: 100% !important;
+            }
+
             #works-content .works-grid-inner .relative-container .works-inner {
                 height: 100% !important;
                 min-height: 100% !important;
                 background-size: cover !important;
-                /* Now fits vertical posters well */
+                background-position: center top !important;
+                /* Ensure the movie title at the top is visible */
             }
         }
     </style>
@@ -596,9 +603,9 @@
                         <div class="relative-container">
                             <div class="works-inner works-inner-img-1"></div>
                             <div class="table-cell">
-                                <label class="works-title">Teaser</label>
+                                <label class="works-title">Proyecto</label>
                                 <p></p><a class="works-button" data-toggle="modal" href="#worksModal-1"><span>Ver
-                                        teaser</span></a>
+                                        proyecto</span></a>
                             </div>
                         </div>
                     </li><!-- work 1 end -->
@@ -607,9 +614,9 @@
                         <div class="relative-container">
                             <div class="works-inner works-inner-img-2"></div>
                             <div class="table-cell">
-                                <label class="works-title">Teaser</label>
+                                <label class="works-title">Proyecto</label>
                                 <p></p><a class="works-button" data-toggle="modal" href="#worksModal-2"><span>Ver
-                                        teaser</span></a>
+                                        proyecto</span></a>
                             </div>
                         </div>
                     </li><!-- work 2 end -->
@@ -618,9 +625,9 @@
                         <div class="relative-container">
                             <div class="works-inner works-inner-img-3"></div>
                             <div class="table-cell">
-                                <label class="works-title">Teaser</label>
+                                <label class="works-title">Proyecto</label>
                                 <p></p><a class="works-button" data-toggle="modal" href="#worksModal-3"><span>Ver
-                                        teaser</span></a>
+                                        proyecto</span></a>
                             </div>
                         </div>
                     </li><!-- work 3 end -->
@@ -629,9 +636,9 @@
                         <div class="relative-container">
                             <div class="works-inner works-inner-img-4"></div>
                             <div class="table-cell">
-                                <label class="works-title">Teaser</label>
+                                <label class="works-title">Proyecto</label>
                                 <p></p><a class="works-button" data-toggle="modal" href="#worksModal-4"><span>Ver
-                                        teaser</span></a>
+                                        proyecto</span></a>
                             </div>
                         </div>
                     </li><!-- work 4 end -->
@@ -640,9 +647,9 @@
                         <div class="relative-container">
                             <div class="works-inner works-inner-img-5"></div>
                             <div class="table-cell">
-                                <label class="works-title">Teaser</label>
+                                <label class="works-title">Proyecto</label>
                                 <p></p><a class="works-button" data-toggle="modal" href="#worksModal-5"><span>Ver
-                                        teaser</span></a>
+                                        proyecto</span></a>
                             </div>
                         </div>
                     </li><!-- work 5 end -->
@@ -651,9 +658,9 @@
                         <div class="relative-container">
                             <div class="works-inner works-inner-img-6"></div>
                             <div class="table-cell">
-                                <label class="works-title">Teaser</label>
+                                <label class="works-title">Proyecto</label>
                                 <p></p><a class="works-button" data-toggle="modal" href="#worksModal-6"><span>Ver
-                                        teaser</span></a>
+                                        proyecto</span></a>
                             </div>
                         </div>
                     </li><!-- work 6 end -->
@@ -938,7 +945,7 @@
                         style="color: #fff; text-align: left; margin-bottom: 25px; letter-spacing: 2px;">Contacto</h2>
                     <h3 class="section-subheading"
                         style="color: #9ca3af; text-align: left; margin-bottom: 45px; border-left: 2px solid #fff; padding-left: 25px; font-weight: 300; line-height: 1.6;">
-                        Hablemos de tu próximo proyecto. No importa el tamaño de la idea, nos morimos por escucharla.
+                        Hablemos de tu próximo proyecto.
                     </h3>
                     <div class="contact-info"
                         style="font-size: 16px; letter-spacing: 1.5px; text-transform: uppercase;">
