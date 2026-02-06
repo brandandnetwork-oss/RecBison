@@ -1338,9 +1338,12 @@ h4.cd-timeline-date {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  height: 100vh;
+  height: auto;
   margin: 0;
-  padding: 0;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 @media only screen and (min-width: 880px) {
@@ -1351,7 +1354,7 @@ h4.cd-timeline-date {
 
 @media only screen and (max-width: 1200px) {
   #works-content {
-    height: 100%;
+    height: auto;
   }
 }
 
@@ -1363,13 +1366,30 @@ h4.cd-timeline-date {
 }
 
 #works-content .works-grid-inner {
-  width: 100%;
-  height: 50%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 33.3333%;
+  margin: 0;
+  padding: 10px;
+  min-height: 500px;
   zoom: 1;
   letter-spacing: normal;
   word-spacing: normal;
   text-rendering: auto;
   list-style: none;
+}
+
+@media only screen and (max-width: 880px) {
+  #works-content .works-grid-inner {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  #works-content .works-grid-inner {
+    width: 100%;
+  }
 }
 
 #works-content .works-grid-inner .relative-container {
@@ -1388,11 +1408,11 @@ h4.cd-timeline-date {
   top: 0;
   background-repeat: no-repeat;
   background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -ms-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -ms-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
   -webkit-transition: all .4s ease;
   -moz-transition: all .4s ease;
   -ms-transition: all .4s ease;
