@@ -890,50 +890,64 @@
         </div><!-- container end -->
     </section><!-- team end --> <!-- contact start -->
     <!-- contact start -->
-    <section id="contact" style="background: #000; color: #fff; padding: 100px 0; margin-bottom: 50px;">
+    <section id="contact"
+        style="background: #1a1a1b; color: #fff; padding: 120px 0; margin-bottom: 50px; border-top: 1px solid #27272a;">
         <div class="container sections">
             <div class="row">
                 <!-- info col start -->
-                <div class="col-md-5" style="margin-bottom: 50px;">
-                    <h2 class="section-heading" style="color: #fff; text-align: left; margin-bottom: 20px;">Contacto
-                    </h2>
+                <div class="col-md-5" style="margin-bottom: 60px;">
+                    <h2 class="section-heading"
+                        style="color: #fff; text-align: left; margin-bottom: 25px; letter-spacing: 2px;">Contacto</h2>
                     <h3 class="section-subheading"
-                        style="color: #aaa; text-align: left; margin-bottom: 40px; border-left: 3px solid #fff; padding-left: 20px;">
+                        style="color: #9ca3af; text-align: left; margin-bottom: 45px; border-left: 2px solid #fff; padding-left: 25px; font-weight: 300; line-height: 1.6;">
                         Hablemos de tu próximo proyecto. No importa el tamaño de la idea, nos morimos por escucharla.
                     </h3>
-                    <div class="contact-info" style="font-size: 18px; letter-spacing: 1px;">
-                        <p style="margin-bottom: 10px; font-weight: 300;">Email</p>
+                    <div class="contact-info"
+                        style="font-size: 16px; letter-spacing: 1.5px; text-transform: uppercase;">
+                        <p style="margin-bottom: 12px; color: #6b7280; font-weight: 600;">Email de contacto</p>
                         <p><a href="mailto:hello@recbison.media"
-                                style="color: #fff; font-weight: 700; text-decoration: none; border-bottom: 1px solid #fff;">hello@recbison.media</a>
+                                style="color: #fff; font-weight: 700; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 5px; transition: all 0.3s ease;">hello@recbison.media</a>
                         </p>
                     </div>
                 </div><!-- info col end -->
 
                 <!-- form col start -->
                 <div class="col-md-7">
-                    <form id="form" action="contact.php" method="post">
+                    <form id="form" action="contact.php" method="post"
+                        style="background: rgba(255,255,255,0.02); padding: 40px; border: 1px solid rgba(255,255,255,0.05);">
                         <div class="row">
                             <div class="col-md-6 form-group">
-                                <input type="text" name="name" class="form-control requiredField" placeholder="NOMBRE"
-                                    style="height: 50px; margin-bottom: 30px; border-radius: 0; border: none; border-bottom: 1px solid #444; background: transparent; color: #fff; padding-left: 0;">
+                                <label
+                                    style="color: #9ca3af; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; display: block;">Nombre</label>
+                                <input type="text" name="name" class="form-control requiredField"
+                                    placeholder="Tu nombre"
+                                    style="height: 45px; margin-bottom: 25px; border-radius: 0; border: none; border-bottom: 1px solid #3f3f46; background: rgba(255,255,255,0.03); color: #fff; padding-left: 15px; font-size: 14px;">
                             </div>
                             <div class="col-md-6 form-group">
+                                <label
+                                    style="color: #9ca3af; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; display: block;">Email</label>
                                 <input type="text" name="email" class="form-control requiredField email"
-                                    placeholder="EMAIL"
-                                    style="height: 50px; margin-bottom: 30px; border-radius: 0; border: none; border-bottom: 1px solid #444; background: transparent; color: #fff; padding-left: 0;">
+                                    placeholder="Tu email"
+                                    style="height: 45px; margin-bottom: 25px; border-radius: 0; border: none; border-bottom: 1px solid #3f3f46; background: rgba(255,255,255,0.03); color: #fff; padding-left: 15px; font-size: 14px;">
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="subject" class="form-control requiredField" placeholder="ASUNTO"
-                                style="height: 50px; margin-bottom: 30px; border-radius: 0; border: none; border-bottom: 1px solid #444; background: transparent; color: #fff; padding-left: 0;">
+                            <label
+                                style="color: #9ca3af; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; display: block;">Asunto</label>
+                            <input type="text" name="subject" class="form-control requiredField"
+                                placeholder="¿En qué podemos ayudarte?"
+                                style="height: 45px; margin-bottom: 25px; border-radius: 0; border: none; border-bottom: 1px solid #3f3f46; background: rgba(255,255,255,0.03); color: #fff; padding-left: 15px; font-size: 14px;">
                         </div>
                         <div class="form-group">
-                            <textarea name="message" class="form-control requiredField" rows="4" placeholder="MENSAJE"
-                                style="margin-bottom: 40px; border-radius: 0; border: none; border-bottom: 1px solid #444; background: transparent; color: #fff; padding-left: 0; resize: none;"></textarea>
+                            <label
+                                style="color: #9ca3af; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; display: block;">Mensaje</label>
+                            <textarea name="message" class="form-control requiredField" rows="4"
+                                placeholder="Cuéntanos más detalles..."
+                                style="margin-bottom: 35px; border-radius: 0; border: none; border-bottom: 1px solid #3f3f46; background: rgba(255,255,255,0.03); color: #fff; padding: 15px; padding-left: 15px; font-size: 14px; resize: none;"></textarea>
                         </div>
                         <div class="text-left">
                             <button type="submit" class="submit"
-                                style="background: transparent; color: #fff; border: 1px solid #fff; padding: 15px 50px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; transition: all 0.3s ease;">Enviar
+                                style="background: #fff; color: #1a1a1b; border: 1px solid #fff; padding: 14px 45px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; transition: all 0.3s ease; font-size: 12px;">Enviar
                                 Mensaje</button>
                         </div>
                     </form>
