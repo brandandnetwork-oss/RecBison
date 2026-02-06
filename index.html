@@ -33,13 +33,36 @@
         /* Mobile specific adjustments */
         @media (max-width: 767px) {
             #works {
-                padding-top: 350px !important;
+                padding-top: 450px !important;
+                /* Allow section to grow vertically */
+                height: auto !important;
             }
 
-            #works-content .works-grid-inner,
+            #works-content {
+                height: auto !important;
+                display: block !important;
+            }
+
+            #works-content .works-grid-inner {
+                width: 100% !important;
+                height: 520px !important;
+                /* Proper vertical poster height */
+                min-height: 520px !important;
+                margin-bottom: 60px !important;
+                /* Significant spacing to avoid "pisen" */
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                float: none !important;
+                display: block !important;
+            }
+
+            #works-content .works-grid-inner .relative-container,
             #works-content .works-grid-inner .relative-container .works-inner {
-                min-height: 220px !important;
-                height: 220px !important;
+                height: 100% !important;
+                min-height: 100% !important;
+                background-size: cover !important;
+                /* Now fits vertical posters well */
             }
         }
     </style>
