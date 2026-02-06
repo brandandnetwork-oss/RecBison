@@ -3793,6 +3793,15 @@ a:hover .c-btn {
 
 
 /* services */
+.digit-time {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 64px;
+  line-height: normal;
+  font-weight: 800;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+
 .service-heading {
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
